@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * The type Likes.
  */
-@Document("Likes")
+@Document(collection="Likes")
 public class Likes {
 
     private long id;

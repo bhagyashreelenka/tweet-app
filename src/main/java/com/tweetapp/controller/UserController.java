@@ -30,11 +30,11 @@ public class UserController {
      * @param user the user
      * @return the response entity
      */
-    @PostMapping("/tweets/register")
+    @PostMapping("/register")
     public ResponseEntity<Void> register(@RequestBody Users user) {
         Users createdUser = userService.register(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{loginId}").buildAndExpand(createdUser.getLoginId()).toUri();
-        log.info("Registering user :"+ createdUser);
+       // log.info("Registering user :"+ createdUser);
         return ResponseEntity.created(uri).build();
 
     }
@@ -44,7 +44,7 @@ public class UserController {
      *
      * @return the list
      */
-    @GetMapping("/tweets/users/all")
+    @GetMapping("/users/all")
     public List<Users> getAllUsers(){
         return userService.getAllUsers();
     }
@@ -55,7 +55,7 @@ public class UserController {
      * @param str the str
      * @return the list
      */
-    @GetMapping("/tweets/user/search/{str}")
+    @GetMapping("/user/search/{str}")
     public List<Users> searchByRegex(@PathVariable String str){
         return userService.searchByRegex(str);
     }
@@ -67,7 +67,7 @@ public class UserController {
      * @param loginId the login id
      * @return the user
      */
-    @GetMapping("/tweets/user/{loginId}")
+    @GetMapping("/user/{loginId}")
     public Users getUser(@PathVariable String loginId) {
         return userService.getUser(loginId);
     }
@@ -79,10 +79,10 @@ public class UserController {
      * @param user    the user
      * @return the response entity
      */
-    @PutMapping("/tweets/{loginId}/forgot")
+    @PutMapping("/{loginId}/forgot")
     public ResponseEntity<Users> updatePassword(@PathVariable String loginId, @RequestBody Users user){
         Users u = userService.updatePassword(loginId, user);
-        log.info("Password Updated for user "+u);
+       // log.info("Password Updated for user "+u);
         return new ResponseEntity<Users>(u, HttpStatus.OK);
     }
 

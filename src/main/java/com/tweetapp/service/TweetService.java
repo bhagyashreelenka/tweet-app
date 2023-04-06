@@ -62,7 +62,7 @@ public class TweetService {
     }
 
     /**
-     * Update tweets tweet.
+     * Create tweet.
      *
      * @param t the t
      * @return the tweet
@@ -84,7 +84,7 @@ public class TweetService {
      * @param id the id
      */
     public void deleteTweet(long id) {
-        log.info("Tweet deleted successfully!");
+        //log.info("Tweet deleted successfully!");
         tweetRepository.deleteById(id);
     }
 
@@ -98,7 +98,7 @@ public class TweetService {
     public Tweet updateTweet(long id, Tweet tweet) {
         tweetRepository.deleteById(id);
         Tweet updatedTweet = tweetRepository.save(tweet);
-        log.info("Tweet updated successfully!");
+        //log.info("Tweet updated successfully!");
         return updatedTweet;
     }
 }

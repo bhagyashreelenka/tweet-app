@@ -33,7 +33,7 @@ public class TweetController {
     @GetMapping("/tweet/{id}")
     public Tweet getTweet(@PathVariable long id) {
         Tweet t = tweetService.find(id);
-        log.info("Details of tweet of id"+id+" : "+t);
+       // log.info("Details of tweet of id"+id+" : "+t);
         return t;
     }
 
@@ -42,7 +42,7 @@ public class TweetController {
      *
      * @return the list
      */
-    @GetMapping(path="/tweets/all")
+    @GetMapping("/all")
     public List<Tweet> getAllTweets(){
         return tweetService.findAll();
     }
@@ -54,7 +54,7 @@ public class TweetController {
      * @param loginId the login id
      * @return the list
      */
-    @GetMapping(path="/tweets/{loginId}")
+    @GetMapping("/{loginId}")
     public List<Tweet> getAllTweetsOfUser(@PathVariable String loginId){
         return tweetService.findByLoginId(loginId);
     }
@@ -66,10 +66,10 @@ public class TweetController {
      * @param t       the t
      * @return the response entity
      */
-    @PostMapping("/tweets/{loginId}/add")
+    @PostMapping("/{loginId}/add")
     public ResponseEntity<Void> postTweets(@PathVariable String loginId,@RequestBody Tweet t) {
         Tweet createdTweet = tweetService.updateTweets(t);
-        log.info("Posting a new Tweet: "+createdTweet);
+        //log.info("Posting a new Tweet: "+createdTweet);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdTweet.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
@@ -80,10 +80,10 @@ public class TweetController {
      * @param id the id
      * @return the response entity
      */
-    @DeleteMapping("/tweets/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTweets(@PathVariable long id){
         tweetService.deleteTweet(id);
-        log.info("Deleted tweet for id "+id);
+        //log.info("Deleted tweet for id "+id);
         return ResponseEntity.noContent().build();
     }
 
@@ -94,10 +94,10 @@ public class TweetController {
      * @param tweet the tweet
      * @return the response entity
      */
-    @PutMapping("/tweets/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Tweet> updateTweets(@PathVariable long id, @RequestBody Tweet tweet){
         Tweet t= tweetService.updateTweet(id, tweet);
-        log.info("updating tweet for id "+id+" : "+t);
+       // log.info("updating tweet for id "+id+" : "+t);
         return new ResponseEntity<Tweet>(t, HttpStatus.OK);
     }
 

@@ -1,6 +1,6 @@
 package com.tweetapp.service;
 
-import com.tweetapp.exception.TweetNotFoundException;
+//import com.tweetapp.exception.TweetNotFoundException;
 import com.tweetapp.model.Comments;
 import com.tweetapp.repository.CommentsRepository;
 import com.tweetapp.repository.TweetRepository;
@@ -19,7 +19,7 @@ import org.springframework.data.domain.Sort;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+//import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 /**

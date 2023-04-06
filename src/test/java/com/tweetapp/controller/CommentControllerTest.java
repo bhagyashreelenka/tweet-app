@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
+//import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Date;
@@ -19,7 +19,7 @@ import java.util.Date;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+//import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -58,16 +58,16 @@ class CommentControllerTest {
 	@MockBean
 	private Comments comment;
 	
-	private Date date;
+	//private Date date;
 
     /**
      * Sets up.
      */
     @BeforeEach
 	void setUp() {
-		 date = new Date();
-		user = new Users("kalyani", "kalyani", "M", "kalyani@gmail.com", "password", "1234567890");
-		comment = new Comments("Hello",100,new Date(),"kalyani");
+		//date = new Date();
+		user = new Users("ram", "ram", "v", "ram@gmail.com", "pass", "999999999");
+		comment = new Comments("Hello",100,new Date(),"ram");
 	}
 
     /**

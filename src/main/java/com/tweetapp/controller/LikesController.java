@@ -28,10 +28,10 @@ public class LikesController {
      * @param id the id
      * @return the like count
      */
-    @GetMapping("/tweet/{id}/likes")
+    @GetMapping("/{id}/likes")
     public Likes getLikeCount(@PathVariable long id) {
         Likes l = likesService.getLikesCount(id);
-        log.info("Details of likes for tweetId "+id+" : "+l);
+       // log.info("Details of likes for tweetId "+id+" : "+l);
         return l;
     }
 
@@ -40,7 +40,7 @@ public class LikesController {
      *
      * @return the list
      */
-    @GetMapping("/tweet/all/likes")
+    @GetMapping("/all/likes")
     public List<Likes> getAll(){
         return likesService.getAll();
     }
@@ -53,10 +53,10 @@ public class LikesController {
      * @param likes   the likes
      * @return the response entity
      */
-    @PutMapping("/tweet/{id}/likesUpdate/{loginId}")
+    @PutMapping("/{id}/likesUpdate/{loginId}")
     public ResponseEntity<Likes> updateLikes(@PathVariable long id,@PathVariable String loginId, @RequestBody Likes likes) {
         Likes updatedLikes = likesService.updateLikes(id, loginId, likes);
-        log.info("Updating likes "+updatedLikes);
+        //log.info("Updating likes "+updatedLikes);
         return new ResponseEntity<Likes>(updatedLikes, HttpStatus.OK);
     }
 
@@ -66,10 +66,10 @@ public class LikesController {
      * @param id the id
      * @return the response entity
      */
-    @DeleteMapping("/tweet/{id}/delete")
+    @DeleteMapping("/{id}/likes/delete")
     public ResponseEntity<Void> Delete(@PathVariable long id){
         likesService.Delete(id);
-        log.info("Deleting details of tweetId : "+id);
+        //log.info("Deleting details of tweetId : "+id);
         return ResponseEntity.noContent().build();
     }
 }

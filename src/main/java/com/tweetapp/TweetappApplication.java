@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The type Tweetapp application.
  */
 @SpringBootApplication
-public class TweetappApplication {
+public class    TweetappApplication {
 
 	/**
 	 * The entry point of application.

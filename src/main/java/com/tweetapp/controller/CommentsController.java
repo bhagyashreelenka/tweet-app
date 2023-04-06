@@ -41,10 +41,10 @@ public class CommentsController {
      * @param comments the comments
      * @return the response entity
      */
-    @PostMapping("/tweets/reply/{tweetId}")
+    @PostMapping("/reply/{tweetId}")
     public ResponseEntity<Void> postComment(@PathVariable long tweetId, @RequestBody Comments comments){
         Comments postedComment = commentsService.postComment(comments);
-        log.info("Posted a comment for tweetId "+tweetId+" : "+postedComment);
+        //log.info("Posted a comment for tweetId "+tweetId+" : "+postedComment);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(postedComment.getComment()).toUri();
         return ResponseEntity.created(uri).build();
     }

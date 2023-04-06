@@ -1,6 +1,6 @@
 package com.tweetapp.service;
 
-import com.tweetapp.exception.UserNotFoundException;
+//import com.tweetapp.exception.UserNotFoundException;
 import com.tweetapp.model.Likes;
 import com.tweetapp.model.Tweet;
 import com.tweetapp.model.Users;
@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+//import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 /**

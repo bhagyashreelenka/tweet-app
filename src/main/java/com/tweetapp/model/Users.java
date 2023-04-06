@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * The type Users.
  */
-@Document("Users")
+@Document(collection="Users")
 public class Users {
 
     @Indexed(unique = true)

@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * The type Tweet.
  */
-@Document("tweet")
+@Document(collection="tweet")
 public class Tweet {
 
     @Id

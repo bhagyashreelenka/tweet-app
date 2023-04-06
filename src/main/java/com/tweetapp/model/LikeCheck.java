@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * The type Like check.
  */
-@Document("LikeCheck")
+@Document(collection="LikeCheck")
 public class LikeCheck {
 
     private String loginId;

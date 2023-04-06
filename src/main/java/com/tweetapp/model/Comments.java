@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * The type Comments.
  */
-@Document("Comments")
+@Document(collection="Comments")
 public class Comments {
 
     private String comment;
